@@ -9,6 +9,28 @@
 
 ---
 
+## 17/08 — outillage générique + guide de portage (dernier jalon)
+
+- **Duo générique pour tout jeu NES** (défauts = Nekketsu, config par env) :
+  - `tools/nes_state_hook.lua` — harnais Lua : hooks d'écriture WRAM par
+    adresses (`HOOK_ADDRS="nom:addr[:snap]"`), screenshots périodiques + à
+    chaque changement, compteur d'exécutions (`HOOK_EXEC`), `HOOK_MAX_FRAMES`.
+  - `tools/nes_driver.ps1` — pilote clavier : séquences par données
+    (`wait`/`tap`/`hold`/`taps`/`until`), mapping bouton→touche (`$KEYMAP`),
+    env `NESDRV_LOG`/`NESDRV_DLOG`/`NESDRV_PROC`. Piège évité : `$LOG` et
+    `$log` = même variable en PowerShell (insensible à la casse) → logger
+    renommé `$logger`.
+  - `_drive2.ps1`/`_tact.lua` restent les versions Nekketsu-spécifiques.
+- **Guide de portage** : `docs/06-porting-guide.md` (FR) + `docs/en/06-porting-guide.md`
+  (EN) = version canonique ; `wiki/Guide-portage.md` = miroir. Les 7 étapes :
+  préparation → machine à états → texte → patcher → vérif émulateur → CI →
+  publication, avec ce qui se réutilise vs à refaire.
+- **Tests locaux PS1** : parser PS pour la syntaxe, dot-source (garde
+  `$MyInvocation.InvocationName -ne "."`), `GetState` parse les 2 formats de
+  log (ancien `STATE=XX` et nouveau `state $0588=XX`).
+
+---
+
 ## 17/08 — clôture : dépôt GitHub, docs FR/EN, CI, wiki
 
 ### Dépôt GitHub
