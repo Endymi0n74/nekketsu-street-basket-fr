@@ -39,9 +39,6 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 « **offensif marque frimeur automatic defensif** » (5 cases de 9 caractères).
 
 ---
-
-## Captures d'écran
-
 Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 
 > L'écran **TACTIQUES** en match (5 cases : « offensif marque frimeur
