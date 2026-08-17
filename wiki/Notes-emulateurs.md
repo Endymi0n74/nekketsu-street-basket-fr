@@ -55,7 +55,9 @@ touches envoyées dans le même processus PowerShell via `SendKeys`.
    adresses via `HOOK_ADDRS`/`HOOK_EXEC` (voir l'en-tête du script) :
    logs d'écritures par adresse, screenshots périodiques + à chaque
    changement d'état, compteur d'exécutions d'une routine.
-2. `tools/_drive2.ps1` : focus + SendKeys, branche selon l'écran (lit le log).
+2. `tools/nes_driver.ps1` (générique) : séquences configurables
+   (`wait`/`tap`/`hold`/`taps`/`until`), mapping bouton → touche, branche
+   selon l'état lu dans le log. `_drive2.ps1` = version Nekketsu spécifique.
 3. Analyse des PNG avec `tools/_ascii_preview.py` et les décodeurs.
 
 ## Astuces

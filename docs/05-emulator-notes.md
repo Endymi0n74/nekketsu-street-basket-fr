@@ -74,8 +74,12 @@ via `SendKeys`. `AllowBackgroundInput` seul ne suffit pas.
    changement d'état, et compte les exécutions d'une routine (preuve que le
    poll tourne chaque frame). Pour un **autre jeu NES**, il suffit de changer
    les adresses via `HOOK_ADDRS`/`HOOK_EXEC` (voir l'en-tête du script).
-2. Piloter le clavier avec `tools/_drive2.ps1` (focus + SendKeys, lecture du
-   log Lua pour brancher selon l'écran).
+2. Piloter le clavier avec le pilote **générique** `tools/nes_driver.ps1`
+   (séquences configurables par données : `wait`/`tap`/`hold`/`taps`/`until`,
+   mapping bouton NES → touche, lecture du log Lua pour brancher selon
+   l'état). Défauts = Nekketsu ; pour un autre jeu, éditer `$KEYMAP`/`$SEQ`
+   en tête de script (voir l'en-tête). `_drive2.ps1` reste la version
+   Nekketsu spécifique de référence.
 3. Analyser les PNG avec `tools/_ascii_preview.py` (aperçu ASCII dans le
    terminal) et/ou les décodeurs de texte.
 

@@ -71,8 +71,11 @@ arrows), mandatory window focus (`AttachThreadInput` +
    of a routine (proof the poll runs every frame). For **another NES game**,
    just change the addresses via `HOOK_ADDRS`/`HOOK_EXEC` (see the script
    header).
-2. Drive the keyboard with `tools/_drive2.ps1` (focus + SendKeys, reads the
-   Lua log to branch per screen).
+2. Drive the keyboard with the **generic** driver `tools/nes_driver.ps1`
+   (data-defined sequences: `wait`/`tap`/`hold`/`taps`/`until`, NES-button
+   → key mapping, reads the Lua log to branch on state). Defaults = Nekketsu;
+   for another game, edit `$KEYMAP`/`$SEQ` at the top of the script (see the
+   header). `_drive2.ps1` stays as the Nekketsu-specific reference.
 3. Analyse the PNGs with `tools/_ascii_preview.py` (ASCII preview in the
    terminal) and/or the text decoders.
 

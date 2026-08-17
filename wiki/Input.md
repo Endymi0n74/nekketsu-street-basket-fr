@@ -55,7 +55,8 @@ Vérifié : un tap S pendant le poll produit `$04 = 0x80` (A) dans les hooks.
 | `tools/_focus.ps1` | Focus de la fenêtre Mesen |
 | `tools/_sendkey.ps1` | Envoi d'une touche |
 | `tools/_drive_test.ps1` | Démo : focus + tap S |
-| `tools/_drive2.ps1` | Pilote adaptatif (lit le log Lua, retries) |
+| `tools/_drive2.ps1` | Pilote adaptatif (lit le log Lua, retries) — Nekketsu |
+| `tools/nes_driver.ps1` | Pilote **générique** : séquences configurables (`wait`/`tap`/`hold`/`taps`/`until`), mapping bouton → touche |
 
 ## Séquences connues
 

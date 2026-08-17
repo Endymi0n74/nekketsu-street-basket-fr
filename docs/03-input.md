@@ -82,7 +82,8 @@ hooks — l'input atteint bien la logique du jeu.
 | `tools/_focus.ps1` | Focus de la fenêtre Mesen (méthode AttachThreadInput + repli clic) |
 | `tools/_sendkey.ps1` | Envoi d'une touche |
 | `tools/_drive_test.ps1` | Démo : focus + tap S → vérifier `$04` |
-| `tools/_drive2.ps1` | Pilote adaptatif : lit le log Lua, presse selon l'écran (retries) |
+| `tools/_drive2.ps1` | Pilote adaptatif : lit le log Lua, presse selon l'écran (retries) — version Nekketsu spécifique |
+| `tools/nes_driver.ps1` | Pilote **générique** : séquences configurables (`wait`/`tap`/`hold`/`taps`/`until`), mapping bouton → touche, branche selon l'état — réutilisable sur un autre jeu |
 
 ## Séquences de navigation connues
 

@@ -94,7 +94,8 @@ HOOK_OUTDIR=D:/tmp ./Mesen.exe ta_rom.nes tools/nes_state_hook.lua --enableStdou
 
 ## Étape 5 — Vérifier en émulateur
 
-1. Lance la ROM patchée avec le harnais + le pilote clavier (`_drive2.ps1`).
+1. Lance la ROM patchée avec le harnais + le pilote clavier générique
+   (`tools/nes_driver.ps1`, séquences configurables par données).
 2. Compare les screenshots FR vs base (découpe, `_ascii_preview.py`).
 3. Vérifie les écrans critiques : menus, dialogues, écran de fin.
 
