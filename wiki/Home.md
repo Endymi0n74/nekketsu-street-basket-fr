@@ -13,6 +13,7 @@ Bienvenue sur le wiki du projet **Nekketsu! Street Basket — Ganbare Dunk Heroe
 - [[Input]] — routines d'input, injection clavier (pilote PowerShell)
 - [[Pipeline-texte]] — police, extraction du texte, application du patch
 - [[Notes-emulateurs]] — pièges Mesen 2.1.1 / BizHawk et API qui marchent
+- [[Guide-portage]] — comment traduire un autre jeu NES avec cet outillage
 
 ## État d'avancement
 
