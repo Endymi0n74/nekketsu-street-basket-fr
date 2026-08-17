@@ -1,8 +1,11 @@
 # Nekketsu Street Basket — Rétro-ingénierie & Traduction FR
 
-**Français** · [English](README.en.md) · [Wiki](https://github.com/Endymi0n74/nekketsu-street-basket-fr/wiki)
-
 [![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
+[![Langue](https://img.shields.io/badge/langue-Fran%C3%A7ais-blue)](README.md)
+[![EN](https://img.shields.io/badge/langue-English-lightgrey)](README.en.md)
+
+📚 [Docs](docs/) · 🛠️ [Outils](tools/) · 📦 [Patches](patch/) · 🌐 [Wiki](https://github.com/Endymi0n74/nekketsu-street-basket-fr/wiki) · ⚖️ [Licence](LICENSE) · 🤝 [Contribuer](CONTRIBUTING.md)
 
 Documentation et outils de la **traduction française** de
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
