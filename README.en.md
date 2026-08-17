@@ -38,9 +38,9 @@ Current goal: navigate story mode → quiz → team → match, open the
 
 The story → team → match flow, on the applied FR patch:
 
-| Title | Quiz (dialogue) | Team (SORT) | Match (VS) |
-|---|---|---|---|
-| <img src="screenshots/title.png" width="220"> | <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
+| Quiz (dialogue) | Team (SORT) | Match (VS) |
+|---|---|---|
+| <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
 
 > The in-match **TACTICS** screen (5 cells: « offensif marque frimeur
 > automatic defensif ») will be added here once the navigation is finished.

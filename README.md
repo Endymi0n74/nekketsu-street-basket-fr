@@ -41,7 +41,7 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 
 Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 
-| Ecran accueil | Quiz (dialogue) | Match (VS) |
+| Quiz (dialogue) | Équipe (SORT) | Match (VS) |
 |---|---|---|
 | <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
 
