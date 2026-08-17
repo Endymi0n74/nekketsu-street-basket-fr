@@ -1,5 +1,7 @@
 # Nekketsu Street Basket — Reverse-Engineering & FR Translation
 
+[![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml)
+
 Documentation and tooling for the **French translation** of
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
 plus the **disassembly** work that made it possible.

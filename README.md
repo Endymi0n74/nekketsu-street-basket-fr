@@ -2,6 +2,8 @@
 
 **Français** · [English](README.en.md)
 
+[![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml)
+
 Documentation et outils de la **traduction française** de
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
 ainsi que du travail de **désassemblage** mené pour y parvenir.
