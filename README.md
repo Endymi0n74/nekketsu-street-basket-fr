@@ -63,6 +63,7 @@ Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 │   ├── 03-input.md               ← routines d'input, injection clavier
 │   ├── 04-text-pipeline.md       ← police, extraction texte, patch
 │   ├── 05-emulator-notes.md      ← pièges Mesen 2.1.1 / BizHawk (API cassée)
+│   ├── 06-porting-guide.md       ← comment traduire un autre jeu NES
 │   ├── session-memory.md         ← mémoire de session (MAJ ~2 h, en FR)
 │   └── en/                       ← versions anglaises des docs ci-dessus
 ├── tools/                        ← scripts réutilisables (Lua/PowerShell/Python)

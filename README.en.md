@@ -61,6 +61,7 @@ The story → team → match flow, on the applied FR patch:
 │   ├── 03-input.md               ← input routines, keyboard injection
 │   ├── 04-text-pipeline.md       ← font, text extraction, patching
 │   ├── 05-emulator-notes.md      ← Mesen 2.1.1 / BizHawk pitfalls (broken APIs)
+│   ├── 06-porting-guide.md       ← how to translate another NES game
 │   ├── session-memory.md         ← working session log (French)
 │   └── en/                       ← English versions of the docs above
 ├── tools/                        ← reusable scripts (Lua/PowerShell/Python)

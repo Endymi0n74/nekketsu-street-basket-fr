@@ -1,8 +1,6 @@
-# Comment traduire un autre jeu NES — guide de portage
+# 06 — Comment traduire un autre jeu NES (guide de portage)
 
-> Version principale : [`docs/06-porting-guide.md`](https://github.com/Endymi0n74/nekketsu-street-basket-fr/blob/main/docs/06-porting-guide.md)
-> (FR) et [`docs/en/06-porting-guide.md`](https://github.com/Endymi0n74/nekketsu-street-basket-fr/blob/main/docs/en/06-porting-guide.md)
-> (EN). Cette page en est le miroir wiki.
+[English](en/06-porting-guide.md)
 
 Ce guide explique comment réutiliser l'outillage du dépôt pour traduire un
 **autre jeu NES**. Il suit la méthode utilisée pour Nekketsu Street Basket,
@@ -14,12 +12,12 @@ refait à chaque jeu.
 - `tools/dis6502.py` — désassembleur 6502 (n'importe quelle ROM 6502).
 - `tools/make_ips.py` — génération IPS avec auto-vérification (universel).
 - `tools/nes_state_hook.lua` — harnais Mesen générique (adresses par env).
-- `tools/_focus.ps1`, `tools/_drive2.ps1`, `tools/_sendkey.ps1` — pilotes
-  clavier PowerShell (n'importe quel émulateur sur Windows).
+- `tools/nes_driver.ps1` — pilote clavier générique (séquences par données,
+  mapping bouton → touche) ; `tools/_focus.ps1`, `_sendkey.ps1` en support.
 - `tools/_ascii_preview.py`, `tools/_read_text.py` — analyse de screenshots.
 - `.github/` — workflow CI + `check_ips.py` + `check_links.py`.
 - Le savoir émulateur : API Mesen 2.1.1 cassée / BizHawk → voir
-  [[Notes-emulateurs]].
+  [docs/05-emulator-notes.md](05-emulator-notes.md).
 
 ## Ce que tu refais à chaque jeu
 
@@ -64,7 +62,7 @@ HOOK_OUTDIR=D:/tmp ./Mesen.exe ta_rom.nes tools/nes_state_hook.lua --enableStdou
    identifier chaque écran sans ouvrir d'image.
 
 > Astuce Nekketsu : le quiz dure ~8 000 frames sans input — ne jamais attendre
-> passivement, envoyer des taps A toutes les ~2 s via le pilote clavier.
+> passivement, envoyer des taps A toutes les ~2 s via `tools/nes_driver.ps1`.
 
 ## Étape 3 — Trouver et extraire le texte
 
