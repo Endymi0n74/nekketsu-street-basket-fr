@@ -22,7 +22,16 @@ jobs:
           import translations
           print(f"translations.py OK: {len(translations.T)} entries")
           EOF
+      - name: Lua syntax check (luac)
+        run: |
+          sudo apt-get update && sudo apt-get install -y lua5.3
+          for f in tools/*.lua; do
+            luac5.3 -p "$f" || { echo "Lua parse failed: $f"; exit 1; }
+          done
+          echo "all Lua scripts parse OK"
       - name: IPS patches well-formed
         run: python .github/scripts/check_ips.py
+      - name: Round-trip patch_rom/make_ips on synthetic ROMs
+        run: python .github/scripts/test_roundtrip.py
       - name: Internal links & screenshots
         run: python .github/scripts/check_links.py
