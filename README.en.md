@@ -1,6 +1,6 @@
 # Nekketsu Street Basket — Reverse-Engineering & FR Translation
 
-[![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml)
+[![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml) · [Wiki](https://github.com/Endymi0n74/nekketsu-street-basket-fr/wiki)
 
 Documentation and tooling for the **French translation** of
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
@@ -54,6 +54,7 @@ The story → team → match flow, on the applied FR patch:
 ├── README.en.md                  ← English overview (this file)
 ├── CONTRIBUTING.md               ← contribution guide (issues/PR)
 ├── LICENSE                       ← MIT
+├── wiki/                         ← reverse-engineering notes (FR, wiki mirror)
 ├── docs/
 │   ├── 01-disassembly.md         ← ROM structure, banks, disassembly
 │   ├── 02-state-machine.md       ← state machine ($0588/$0589, dispatcher)

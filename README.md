@@ -1,6 +1,6 @@
 # Nekketsu Street Basket — Rétro-ingénierie & Traduction FR
 
-**Français** · [English](README.en.md)
+**Français** · [English](README.en.md) · [Wiki](https://github.com/Endymi0n74/nekketsu-street-basket-fr/wiki)
 
 [![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml)
 
@@ -56,6 +56,7 @@ Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 ├── README.md                     ← ce fichier (FR) / README.en.md (EN)
 ├── CONTRIBUTING.md               ← guide de contribution (issues/PR)
 ├── LICENSE                       ← MIT
+├── wiki/                         ← notes de rétro-ingénierie (FR, miroir du wiki)
 ├── docs/
 │   ├── 01-disassembly.md         ← structure ROM, banques, désassemblage
 │   ├── 02-state-machine.md       ← machine à états ($0588/$0589, dispatcher)
