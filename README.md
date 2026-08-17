@@ -23,7 +23,7 @@ français.
 
 | Étape | Statut |
 |---|---|
-| Traduction FR complète (patch v1.2 Final) | ✅ Publié (16/08/2026) |
+| Traduction FR en cours (patch v1.2) | ✅ Publié (16/08/2026) |
 | Patch IPS JPN→FR et EN→FR | ✅ `patch/` |
 | Désassemblage banques 3 & 7 | ✅ `analysis/` |
 | Machine à états (dispatcher, états/sous-états) | ✅ Cartographiée |
@@ -41,7 +41,7 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 
 Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 
-| Titre | Quiz (dialogue) | Équipe (SORT) | Match (VS) |
+| Quiz (dialogue) | Quiz (dialogue) | Quiz (dialogue) | Match (VS) |
 |---|---|---|---|
 | <img src="screenshots/title.png" width="220"> | <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
 
