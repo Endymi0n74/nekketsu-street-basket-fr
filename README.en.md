@@ -37,6 +37,8 @@ Current goal: navigate story mode → quiz → team → match, open the
 ```
 ├── README.md                     ← French overview
 ├── README.en.md                  ← English overview (this file)
+├── CONTRIBUTING.md               ← contribution guide (issues/PR)
+├── LICENSE                       ← MIT
 ├── docs/
 │   ├── 01-disassembly.md         ← ROM structure, banks, disassembly
 │   ├── 02-state-machine.md       ← state machine ($0588/$0589, dispatcher)
@@ -96,3 +98,17 @@ Size: 262,160 bytes (256 KB, 16-byte iNES header).
    `make_ips.py`.
 
 See `docs/` (or `docs/en/`) for details.
+
+---
+
+## License & credits
+
+- Code, tools and documentation: [MIT](LICENSE). **No ROM is included** —
+  apply the patch to your own dump of the original game (CRC32s in the
+  Required base ROMs section).
+- **French translation**: free to use and redistribute with credit to the
+  translators. It builds on Farid's English translation (v1.2 Final,
+  October 2010) as a base.
+- Original game: *Nekketsu! Street Basket — Ganbare Dunk Heroes* © 1993
+  Technos Japan.
+- Contributions welcome — see [CONTRIBUTING](CONTRIBUTING.md).

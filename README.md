@@ -39,6 +39,8 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 
 ```
 ├── README.md                     ← ce fichier (FR) / README.en.md (EN)
+├── CONTRIBUTING.md               ← guide de contribution (issues/PR)
+├── LICENSE                       ← MIT
 ├── docs/
 │   ├── 01-disassembly.md         ← structure ROM, banques, désassemblage
 │   ├── 02-state-machine.md       ← machine à états ($0588/$0589, dispatcher)
@@ -99,3 +101,17 @@ Taille : 262 160 octets (256 Ko, en-tête iNES de 16 octets).
    génération IPS par `make_ips.py`.
 
 Voir `docs/` pour le détail.
+
+---
+
+## Licence & crédits
+
+- Code, outils et documentation : [MIT](LICENSE). **Aucune ROM incluse** —
+  appliquez le patch sur votre propre dump du jeu original (CRC32 dans la
+  section ROMs de base).
+- **Traduction française** : libre d'utilisation et de redistribution avec
+  mention des traducteurs. Elle s'appuie sur la traduction anglaise
+  **v1.2 Final de Farid** (octobre 2010) comme base.
+- Jeu original : *Nekketsu! Street Basket — Ganbare Dunk Heroes* © 1993
+  Technos Japan.
+- Contributions bienvenues — voir [CONTRIBUTING](CONTRIBUTING.md).
