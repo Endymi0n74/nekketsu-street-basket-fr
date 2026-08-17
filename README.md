@@ -35,6 +35,19 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 
 ---
 
+## Captures d'écran
+
+Le flux mode histoire → équipe → match, sur le patch FR appliqué :
+
+| Titre | Quiz (dialogue) | Équipe (SORT) | Match (VS) |
+|---|---|---|---|
+| <img src="screenshots/title.png" width="220"> | <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
+
+> L'écran **TACTIQUES** en match (5 cases : « offensif marque frimeur
+> automatic defensif ») sera ajouté ici une fois la navigation terminée.
+
+---
+
 ## Structure du dépôt
 
 ```
@@ -63,6 +76,7 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 ├── analysis/
 │   ├── bank3_dis.txt             ← désassemblage banque 3 (16 384 lignes)
 │   └── bank7_dis.txt             ← désassemblage banque 7 (fixe, 16 384 lignes)
+├── screenshots/                  ← captures FR (titre, quiz, SORT, match)
 └── patch/
     ├── Nekketsu Street Basket (JPN) FR.ips         (19 Ko — sur ROM JAP)
     └── Nekketsu Street Basket (v1.2 Final) FR.ips  (4 Ko — sur ROM EN de Farid)

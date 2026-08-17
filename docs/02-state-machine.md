@@ -38,6 +38,10 @@ boot ──► état 04 (quiz Downtown) ──► état 03 (titre, attract)
   des taps A le font avancer beaucoup plus vite (fini à f2206 dans un run).
 - Le **titre** (état 03) boucle en attract : sous-états 80-84, retours vers
   état 00.
+Écrans correspondants (captures FR) : [titre](../screenshots/title.png) →
+[quiz](../screenshots/quiz-dialogue.png) → [SORT](../screenshots/sort.png) →
+[match](../screenshots/match.png).
+
 - Le **menu SORT** (état 02) : sous-états en cycle 08 → 07 → 05. C'est un
   curseur à 3 positions ; un appui **A** déclenche le SELECT
   (sous-état 88 → 07) et enregistre un choix de personnage (2 picks puis

@@ -32,6 +32,19 @@ Current goal: navigate story mode → quiz → team → match, open the
 
 ---
 
+## Screenshots
+
+The story → team → match flow, on the applied FR patch:
+
+| Title | Quiz (dialogue) | Team (SORT) | Match (VS) |
+|---|---|---|---|
+| <img src="screenshots/title.png" width="220"> | <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
+
+> The in-match **TACTICS** screen (5 cells: « offensif marque frimeur
+> automatic defensif ») will be added here once the navigation is finished.
+
+---
+
 ## Repository layout
 
 ```
@@ -61,6 +74,7 @@ Current goal: navigate story mode → quiz → team → match, open the
 ├── analysis/
 │   ├── bank3_dis.txt             ← bank 3 disassembly (16,384 lines)
 │   └── bank7_dis.txt             ← bank 7 disassembly (fixed, 16,384 lines)
+├── screenshots/                  ← FR captures (title, quiz, SORT, match)
 └── patch/
     ├── Nekketsu Street Basket (JPN) FR.ips         (19 KB — for the JAP ROM)
     └── Nekketsu Street Basket (v1.2 Final) FR.ips  (4 KB — for Farid's EN ROM)

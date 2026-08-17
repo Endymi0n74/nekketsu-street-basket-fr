@@ -36,6 +36,10 @@ boot ──► state 04 (Downtown quiz) ──► state 03 (title, attract)
   Mesen; repeated A taps advance it much faster (finished at f2206 in one run).
 - The **title** (state 03) loops in attract: substates 80-84, returning to
   state 00.
+Matching screens (FR captures): [title](../../screenshots/title.png) →
+[quiz](../../screenshots/quiz-dialogue.png) → [SORT](../../screenshots/sort.png) →
+[match](../../screenshots/match.png).
+
 - The **SORT menu** (state 02): substate cycle 08 → 07 → 05. It is a
   3-position cursor; pressing **A** triggers SELECT (substate 88 → 07) and
   records a character pick (2 picks then back to the menu) — the state exit
