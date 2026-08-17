@@ -57,9 +57,20 @@ arrows), mandatory window focus (`AttachThreadInput` +
 
 ## Validated workflow (17/08) to reach a screen
 
-1. Launch Mesen in GUI with a Lua hook script (`tools/_mt_hook.lua` or
-   `tools/_tact.lua`) that logs `$0588/$0589/$04` and takes screenshots
-   (periodic + on every state change).
+1. Launch Mesen in GUI with a Lua hook script. The **generic** harness
+   `tools/nes_state_hook.lua` (configured via environment variables,
+   defaults = Nekketsu) is recommended:
+
+   ```bash
+   HOOK_OUTDIR=D:/tmp HOOK_ADDRS="state:0x0588:snap,sub:0x0589,ctrl:0x04" \
+     HOOK_EXEC=0xFF98 ./Mesen.exe fr.nes tools/nes_state_hook.lua --enableStdout
+   ```
+
+   It logs writes to each address (state/substate/controller or any WRAM),
+   takes periodic screenshots + on every state change, and counts executions
+   of a routine (proof the poll runs every frame). For **another NES game**,
+   just change the addresses via `HOOK_ADDRS`/`HOOK_EXEC` (see the script
+   header).
 2. Drive the keyboard with `tools/_drive2.ps1` (focus + SendKeys, reads the
    Lua log to branch per screen).
 3. Analyse the PNGs with `tools/_ascii_preview.py` (ASCII preview in the

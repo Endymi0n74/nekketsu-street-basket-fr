@@ -49,8 +49,12 @@ touches envoyées dans le même processus PowerShell via `SendKeys`.
 
 ## Workflow validé
 
-1. Mesen GUI + script Lua de hooks (`tools/_mt_hook.lua` / `_tact.lua`) qui
-   log `$0588/$0589/$04` et prend des screenshots.
+1. Mesen GUI + script Lua de hooks. Le harnais **générique**
+   `tools/nes_state_hook.lua` (configurable par variables d'environnement,
+   défauts = Nekketsu) est recommandé — pour un autre jeu NES, changer les
+   adresses via `HOOK_ADDRS`/`HOOK_EXEC` (voir l'en-tête du script) :
+   logs d'écritures par adresse, screenshots périodiques + à chaque
+   changement d'état, compteur d'exécutions d'une routine.
 2. `tools/_drive2.ps1` : focus + SendKeys, branche selon l'écran (lit le log).
 3. Analyse des PNG avec `tools/_ascii_preview.py` et les décodeurs.
 

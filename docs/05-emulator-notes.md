@@ -60,9 +60,20 @@ via `SendKeys`. `AllowBackgroundInput` seul ne suffit pas.
 
 ## Workflow validé (17/08) pour avancer vers un écran
 
-1. Lancer Mesen en GUI avec un script Lua de hooks
-   (`tools/_mt_hook.lua` ou `tools/_tact.lua`) qui log `$0588/$0589/$04` et
-   prend des screenshots (périodiques + à chaque changement d'état).
+1. Lancer Mesen en GUI avec un script Lua de hooks. Le harnais **générique**
+   `tools/nes_state_hook.lua` (paramétrable par variables d'environnement,
+   défauts = Nekketsu) est recommandé :
+
+   ```bash
+   HOOK_OUTDIR=D:/tmp HOOK_ADDRS="state:0x0588:snap,sub:0x0589,ctrl:0x04" \
+     HOOK_EXEC=0xFF98 ./Mesen.exe fr.nes tools/nes_state_hook.lua --enableStdout
+   ```
+
+   Il log les écritures sur chaque adresse (état/sous-état/manette ou
+   n'importe quelle WRAM), prend des screenshots périodiques + à chaque
+   changement d'état, et compte les exécutions d'une routine (preuve que le
+   poll tourne chaque frame). Pour un **autre jeu NES**, il suffit de changer
+   les adresses via `HOOK_ADDRS`/`HOOK_EXEC` (voir l'en-tête du script).
 2. Piloter le clavier avec `tools/_drive2.ps1` (focus + SendKeys, lecture du
    log Lua pour brancher selon l'écran).
 3. Analyser les PNG avec `tools/_ascii_preview.py` (aperçu ASCII dans le
