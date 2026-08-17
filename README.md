@@ -1,5 +1,7 @@
 # Nekketsu Street Basket — Rétro-ingénierie & Traduction FR
 
+**Français** · [English](README.en.md)
+
 Documentation et outils de la **traduction française** de
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
 ainsi que du travail de **désassemblage** mené pour y parvenir.
@@ -36,14 +38,15 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 ## Structure du dépôt
 
 ```
-├── README.md                     ← ce fichier
+├── README.md                     ← ce fichier (FR) / README.en.md (EN)
 ├── docs/
 │   ├── 01-disassembly.md         ← structure ROM, banques, désassemblage
 │   ├── 02-state-machine.md       ← machine à états ($0588/$0589, dispatcher)
 │   ├── 03-input.md               ← routines d'input, injection clavier
 │   ├── 04-text-pipeline.md       ← police, extraction texte, patch
 │   ├── 05-emulator-notes.md      ← pièges Mesen 2.1.1 / BizHawk (API cassée)
-│   └── session-memory.md         ← mémoire de session (MAJ ~2 h)
+│   ├── session-memory.md         ← mémoire de session (MAJ ~2 h, en FR)
+│   └── en/                       ← versions anglaises des docs ci-dessus
 ├── tools/                        ← scripts réutilisables (Lua/PowerShell/Python)
 │   ├── dis6502.py                ← désassembleur 6502 minimal
 │   ├── make_ips.py               ← génération des patches IPS

@@ -1,5 +1,7 @@
 # 02 — Machine à états
 
+[English](en/02-state-machine.md)
+
 ## Variables
 
 - `$0588` : état principal (écrit à chaque changement d'écran).

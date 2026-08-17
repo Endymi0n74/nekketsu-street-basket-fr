@@ -1,5 +1,7 @@
 # 04 — Pipeline texte, police et patch
 
+[English](en/04-text-pipeline.md)
+
 ## Police
 
 - Police **outline** (lettres creuses), 16 px = 2 rangées de tuiles (rangée du

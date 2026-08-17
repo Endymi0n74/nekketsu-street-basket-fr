@@ -1,5 +1,7 @@
 # 03 — Routines d'input et injection
 
+[English](en/03-input.md)
+
 ## Routines (banque 7)
 
 Le jeu poll la manette **chaque frame** :

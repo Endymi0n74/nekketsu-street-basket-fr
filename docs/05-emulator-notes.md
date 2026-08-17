@@ -1,5 +1,7 @@
 # 05 — Notes émulateurs : pièges et API qui marchent
 
+[English](en/05-emulator-notes.md)
+
 Deux émulateurs ont été utilisés. Les deux ont des API Lua capricieuses ;
 cette page est le mémo des découvertes pour ne pas repasser par les mêmes
 impasses.
