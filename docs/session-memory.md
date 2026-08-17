@@ -9,6 +9,46 @@
 
 ---
 
+## 17/08 — clôture : dépôt GitHub, docs FR/EN, CI, wiki
+
+### Dépôt GitHub
+- **`Endymi0n74/nekketsu-street-basket-fr`** (public) — local
+  `D:/Codex/nekketsu-street-basket-fr`. Créé et poussé ce jour.
+- Structure : `README.md`/`README.en.md`, `docs/` (FR + `docs/en/`), `tools/`
+  (20 scripts Lua/PowerShell/Python), `analysis/` (bank3_dis.txt, bank7_dis.txt),
+  `patch/` (2 IPS), `screenshots/` (captures FR ×2), `wiki/` (notes FR),
+  `.github/` (workflow + 3 scripts de check).
+- **Licence MIT** (`LICENSE`, avec notes ROM/crédits) + `CONTRIBUTING.md`
+  (issues/PR). Crédits : base EN de Farid (v1.2 Final), jeu © 1993 Technos Japan.
+
+### CI (workflow `ci.yml`, badge sur les README) — TOUT VERT
+1. `py_compile` tools/*.py + import `translations.py` (206 entrées)
+2. `luac5.3 -p` sur tools/*.lua (7 scripts)
+3. `check_ips.py` : structure des IPS (records/RLE/EOF)
+4. `test_roundtrip.py` : ROMs **synthétiques** → patch_rom.py + make_ips.py →
+   réapplication IPS = fr.nes octet pour octet (vérifié : JPN 141 774 o, EN
+   1 225 o). ⚠️ le test câble les magic bytes de patch_rom (0xF5B7, 0x1CA08,
+   0x0C00F, 0x1FE02) et une zone box35 avec overrun garanti (budgets liés aux
+   longueurs actuelles de translations.py) — ajuster si patch_rom/translations changent.
+5. `check_links.py` : liens internes + images des markdown.
+
+### Galerie d'écrans & wiki
+- Galerie README réalignée (FR+EN) : **Quiz | Équipe (SORT) | Match** ←
+  quiz-dialogue.png / sort.png / match.png. `title.png` conservé dans
+  `screenshots/` et référencé dans docs/02-state-machine.
+- **Wiki GitHub activé** (`has_wiki=true`), notes FR commitées dans `wiki/`
+  (Home, Desassemblage, Machine-a-etats, Input, Pipeline-texte, Notes-emulateurs).
+  ⚠️ Le dépôt git du wiki (`*.wiki.git`) n'est créé par GitHub qu'à la **1re
+  sauvegarde web** d'une page : ensuite `git clone` → copier `wiki/*.md` → push.
+
+### Reste à faire (inchangé)
+1. **Lancer un match** depuis le menu SORT → ouvrir **TACTIQUES** en match →
+   vérifier « offensif marque frimeur automatic defensif » (B3:00F732).
+2. Police : vraie table de caractères (transformation palette/ombre).
+3. Nettoyer les scripts jetables de `nes_translate/`.
+
+---
+
 ## 17/08/2026 — session désassemblage + input (état à la clôture)
 
 ### Fait
