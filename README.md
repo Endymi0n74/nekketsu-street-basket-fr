@@ -41,9 +41,9 @@ menu **TACTIQUES** en match et vérifier les 5 tactiques
 
 Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 
-| Quiz (dialogue) | Quiz (dialogue) | Quiz (dialogue) | Match (VS) |
-|---|---|---|---|
-| <img src="screenshots/title.png" width="220"> | <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
+| Ecran accueil | Quiz (dialogue) | Match (VS) |
+|---|---|---|
+| <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
 
 > L'écran **TACTIQUES** en match (5 cases : « offensif marque frimeur
 > automatic defensif ») sera ajouté ici une fois la navigation terminée.
