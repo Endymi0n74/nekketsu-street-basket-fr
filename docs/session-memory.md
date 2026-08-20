@@ -31,6 +31,36 @@
 
 ---
 
+## 17/08 — wiki GitHub : BLOCQUÉ par un incident GitHub (état à l'arrêt)
+
+- **Contexte** : l'utilisateur a créé la 1re page du wiki via le navigateur
+  (« C'est fait »). Mais rien ne persiste côté GitHub :
+  - `*.wiki.git` → **« Repository not found »** (clone ET push direct avec
+    token, dépôt local `git init` + commit fait avant push).
+  - `/wiki` → **302 vers la racine du repo** (avec et sans auth) ; la
+    navigation du repo n'a **aucun onglet Wiki** (7 onglets : Code, Issues,
+    Pulls, Actions, Projects, Security, Insights).
+  - `/wiki/Home` et `/wiki/_new` (avec auth) → **503/504/« Unicorn »**
+    (erreurs backend).
+- **Cause racine identifiée : incident GitHub en cours** (githubstatus.com :
+  « Partial System Outage », « Incident with GitHub.com | investigating |
+  critical », ~20 % d'erreurs web/API, Webhooks/API/Issues/PRs/Actions
+  dégradés). Le wiki (backend Pages/API) est incohérent à cause de ça.
+- **Déjà tenté sans effet** : toggles `has_wiki` off/on (×2, avec pauses),
+  push direct `.wiki.git` (avec et sans token), vérifs `/wiki`, `/wiki/Home`,
+  `/wiki/_new`, `wiki.atom`, raw.githubusercontent, GraphQL `hasWikiEnabled`
+  (= true mais UI non servie), page Settings (404).
+- **Quand GitHub sera revenu à la normale** (vérifier githubstatus.com) :
+  1. `git clone https://github.com/Endymi0n74/nekketsu-street-basket-fr.wiki.git`
+  2. Si OK → copier `wiki/*.md` (7 pages) → commit → push.
+  3. Si toujours « Repository not found » → redemander à l'utilisateur de
+     re-créer la page web (Home) — la 1re sauvegarde web reste la seule voie
+     de provisionnement si le push direct ne suffit pas.
+- Le contenu n'est PAS perdu : les 7 notes FR vivent dans `wiki/` du dépôt
+  principal (commit `21c58b9`), README pointe vers l'onglet wiki.
+
+---
+
 ## 17/08 — clôture : dépôt GitHub, docs FR/EN, CI, wiki
 
 ### Dépôt GitHub
