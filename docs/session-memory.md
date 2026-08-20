@@ -47,9 +47,9 @@
   avec l'outillage générique et le guide de portage, arbre sans `wiki/`.
 - Guide de portage `docs/06-porting-guide.md` (FR/EN) : URL de clone mise à
   jour.
-- Local : le dossier `D:/Codex/nekketsu-street-basket-fr` garde son nom (il
-  contient aussi l'atelier `nes_translate/`) — seule la remote pointe vers
-  `nes-translation`.
+- Local : le dossier du repo est `D:/Codex/nes-translation` (renommé le
+  17/08). L'atelier `nes_translate/` est un dossier frère à part
+  (`D:/Codex/nes_translate/`), pas un sous-dossier du repo.
 
 ---
 
@@ -69,8 +69,8 @@
 
 ### Dépôt GitHub
 - **`Endymi0n74/nes-translation`** (public, renommé depuis
-  `nekketsu-street-basket-fr`) — local `D:/Codex/nekketsu-street-basket-fr`.
-  Créé et poussé le 17/08.
+  `nekketsu-street-basket-fr`) — local `D:/Codex/nes-translation` (renommé le
+  17/08). Créé et poussé le 17/08.
 - Structure : `README.md`/`README.en.md`, `docs/` (FR + `docs/en/`), `tools/`
   (20 scripts Lua/PowerShell/Python), `analysis/` (bank3_dis.txt, bank7_dis.txt),
   `patch/` (2 IPS), `screenshots/` (captures FR ×2), `.github/` (workflow +
