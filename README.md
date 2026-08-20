@@ -1,15 +1,20 @@
-# Nekketsu Street Basket — Rétro-ingénierie & Traduction FR
+# NES Translation — Rétro-ingénierie & outillage de traduction
 
-[![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml)
+[![CI](https://github.com/Endymi0n74/nes-translation/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nes-translation/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![Langue](https://img.shields.io/badge/langue-Fran%C3%A7ais-blue)](README.md)
 [![EN](https://img.shields.io/badge/langue-English-lightgrey)](README.en.md)
 
-📚 [Docs](docs/) · 🛠️ [Outils](tools/) · 📦 [Patches](patch/) · 🌐 [Wiki](https://github.com/Endymi0n74/nekketsu-street-basket-fr/wiki) · ⚖️ [Licence](LICENSE) · 🤝 [Contribuer](CONTRIBUTING.md)
+📚 [Docs](docs/) · 🛠️ [Outils](tools/) · 📦 [Patches](patch/) · ⚖️ [Licence](LICENSE) · 🤝 [Contribuer](CONTRIBUTING.md)
 
-Documentation et outils de la **traduction française** de
+Kit d'outils **générique** pour la rétro-ingénierie et la traduction de jeux
+**NES** : désassembleur 6502, génération de patches IPS, harnais d'émulateur
+(Mesen 2.1.1 / BizHawk), pilote d'injection clavier, et un guide de portage
+pour appliquer la méthode à n'importe quel jeu.
+
+**Cas d'étude complet :** la **traduction française** de
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
-ainsi que du travail de **désassemblage** mené pour y parvenir.
+menée de bout en bout avec ce kit — du désassemblage jusqu'au patch IPS publié.
 
 Le patch publié (`patch/`) transforme la ROM japonaise d'origine en version
 entièrement française, en prenant la traduction anglaise de Farid (v1.2 Final,
@@ -26,20 +31,28 @@ français.
 
 | Étape | Statut |
 |---|---|
-| Traduction FR en cours (patch v1.2) | ✅ Publié (16/08/2026) |
+| Outillage générique (désassemblage, IPS, hooks, pilote clavier) | ✅ Réutilisable |
+| Guide de portage vers un autre jeu NES | ✅ `docs/06-porting-guide.md` |
+| Traduction FR de Nekketsu Street Basket (patch v1.2) | ✅ Publié (16/08/2026) |
 | Patch IPS JPN→FR et EN→FR | ✅ `patch/` |
 | Désassemblage banques 3 & 7 | ✅ `analysis/` |
 | Machine à états (dispatcher, états/sous-états) | ✅ Cartographiée |
 | Routines d'input + injection clavier | ✅ Résolue (pilote PowerShell) |
 | Vérification de l'écran TACTIQUES en match | 🔄 En cours |
-| Rétro-ingénierie complète de la police | 🔄 À approfondir |
 
 Objectif en cours : naviguer mode histoire → quiz → équipe → match, ouvrir le
 menu **TACTIQUES** en match et vérifier les 5 tactiques
 « **offensif marque frimeur automatic defensif** » (5 cases de 9 caractères).
 
 ---
+
+## Captures d'écran
+
 Le flux mode histoire → équipe → match, sur le patch FR appliqué :
+
+| Quiz (dialogue) | Équipe (SORT) | Match (VS) |
+|---|---|---|
+| <img src="screenshots/quiz-dialogue.png" width="220"> | <img src="screenshots/sort.png" width="220"> | <img src="screenshots/match.png" width="220"> |
 
 > L'écran **TACTIQUES** en match (5 cases : « offensif marque frimeur
 > automatic defensif ») sera ajouté ici une fois la navigation terminée.
@@ -52,7 +65,6 @@ Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 ├── README.md                     ← ce fichier (FR) / README.en.md (EN)
 ├── CONTRIBUTING.md               ← guide de contribution (issues/PR)
 ├── LICENSE                       ← MIT
-├── wiki/                         ← notes de rétro-ingénierie (FR, miroir du wiki)
 ├── docs/
 │   ├── 01-disassembly.md         ← structure ROM, banques, désassemblage
 │   ├── 02-state-machine.md       ← machine à états ($0588/$0589, dispatcher)
@@ -67,6 +79,8 @@ Le flux mode histoire → équipe → match, sur le patch FR appliqué :
 │   ├── make_ips.py               ← génération des patches IPS
 │   ├── patch_rom.py              ← application des traductions sur la ROM
 │   ├── translations.py           ← table de traductions FR (source de vérité)
+│   ├── nes_state_hook.lua        ← harnais Mesen générique (hooks par adresses)
+│   ├── nes_driver.ps1            ← pilote clavier générique (séquences par données)
 │   ├── _mesen_dump.lua           ← harnais de capture Mesen (navigation + shots)
 │   ├── _mt_hook.lua              ← trace machine à états (hooks WRAM)
 │   ├── _tact.lua                 ← hooks état/sous-état + screenshots

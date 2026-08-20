@@ -22,54 +22,59 @@
     renommé `$logger`.
   - `_drive2.ps1`/`_tact.lua` restent les versions Nekketsu-spécifiques.
 - **Guide de portage** : `docs/06-porting-guide.md` (FR) + `docs/en/06-porting-guide.md`
-  (EN) = version canonique ; `wiki/Guide-portage.md` = miroir. Les 7 étapes :
-  préparation → machine à états → texte → patcher → vérif émulateur → CI →
-  publication, avec ce qui se réutilise vs à refaire.
+  (EN). Les 7 étapes : préparation → machine à états → texte → patcher → vérif
+  émulateur → CI → publication, avec ce qui se réutilise vs à refaire.
 - **Tests locaux PS1** : parser PS pour la syntaxe, dot-source (garde
   `$MyInvocation.InvocationName -ne "."`), `GetState` parse les 2 formats de
   log (ancien `STATE=XX` et nouveau `state $0588=XX`).
 
 ---
 
-## 17/08 — wiki GitHub : BLOCQUÉ par un incident GitHub (état à l'arrêt)
+## 17/08 — renommage `nes-translation` + abandon du wiki (dernier jalon)
 
-- **Contexte** : l'utilisateur a créé la 1re page du wiki via le navigateur
-  (« C'est fait »). Mais rien ne persiste côté GitHub :
-  - `*.wiki.git` → **« Repository not found »** (clone ET push direct avec
-    token, dépôt local `git init` + commit fait avant push).
-  - `/wiki` → **302 vers la racine du repo** (avec et sans auth) ; la
-    navigation du repo n'a **aucun onglet Wiki** (7 onglets : Code, Issues,
-    Pulls, Actions, Projects, Security, Insights).
-  - `/wiki/Home` et `/wiki/_new` (avec auth) → **503/504/« Unicorn »**
-    (erreurs backend).
-- **Cause racine identifiée : incident GitHub en cours** (githubstatus.com :
-  « Partial System Outage », « Incident with GitHub.com | investigating |
-  critical », ~20 % d'erreurs web/API, Webhooks/API/Issues/PRs/Actions
-  dégradés). Le wiki (backend Pages/API) est incohérent à cause de ça.
-- **Déjà tenté sans effet** : toggles `has_wiki` off/on (×2, avec pauses),
-  push direct `.wiki.git` (avec et sans token), vérifs `/wiki`, `/wiki/Home`,
-  `/wiki/_new`, `wiki.atom`, raw.githubusercontent, GraphQL `hasWikiEnabled`
-  (= true mais UI non servie), page Settings (404).
-- **Quand GitHub sera revenu à la normale** (vérifier githubstatus.com) :
-  1. `git clone https://github.com/Endymi0n74/nekketsu-street-basket-fr.wiki.git`
-  2. Si OK → copier `wiki/*.md` (7 pages) → commit → push.
-  3. Si toujours « Repository not found » → redemander à l'utilisateur de
-     re-créer la page web (Home) — la 1re sauvegarde web reste la seule voie
-     de provisionnement si le push direct ne suffit pas.
-- Le contenu n'est PAS perdu : les 7 notes FR vivent dans `wiki/` du dépôt
-  principal (commit `21c58b9`), README pointe vers l'onglet wiki.
+- **Le dépôt GitHub s'appelle désormais `Endymi0n74/nes-translation`** (ex
+  `nekketsu-street-basket-fr`, renommé via `gh repo rename` le 17/08 — GitHub
+  redirige automatiquement l'ancienne URL). Projet repositionné comme **kit
+  NES global** : désassemblage, IPS, hooks émulateur, pilote clavier, guide de
+  portage — Nekketsu Street Basket reste le **cas d'étude** complet (patch FR
+  publié).
+- **Le wiki GitHub est abandonné** (« on oublie le wiki ») : dossier `wiki/`
+  supprimé du repo (le contenu FR était un miroir des `docs/` — rien n'est
+  perdu), liens wiki retirés des README, et l'onglet wiki GitHub reste activé
+  mais ne sera plus alimenté.
+- README FR/EN réécrits : titre « NES Translation — Rétro-ingénierie &
+  outillage de traduction », badges à la nouvelle URL, tableau d'état étendu
+  avec l'outillage générique et le guide de portage, arbre sans `wiki/`.
+- Guide de portage `docs/06-porting-guide.md` (FR/EN) : URL de clone mise à
+  jour.
+- Local : le dossier `D:/Codex/nekketsu-street-basket-fr` garde son nom (il
+  contient aussi l'atelier `nes_translate/`) — seule la remote pointe vers
+  `nes-translation`.
+
+---
+
+## 17/08 — wiki GitHub : ABANDONNÉ (suite à l'incident GitHub)
+
+- Tenté le 17/08 : 1re page wiki créée par l'utilisateur via le navigateur,
+  mais rien ne persistait (`.wiki.git` → « Repository not found », `/wiki` →
+  302 racine, pas d'onglet Wiki, `/wiki/Home` → 503/504). Cause : **incident
+  GitHub en cours** (« Incident with GitHub.com », Partial System Outage).
+- **Décision : on abandonne le wiki.** Le dossier `wiki/` (7 pages FR) a été
+  supprimé du repo — le contenu est dupliqué dans `docs/` (FR + EN), donc
+  rien n'est perdu. Les liens wiki ont été retirés des README.
 
 ---
 
 ## 17/08 — clôture : dépôt GitHub, docs FR/EN, CI, wiki
 
 ### Dépôt GitHub
-- **`Endymi0n74/nekketsu-street-basket-fr`** (public) — local
-  `D:/Codex/nekketsu-street-basket-fr`. Créé et poussé ce jour.
+- **`Endymi0n74/nes-translation`** (public, renommé depuis
+  `nekketsu-street-basket-fr`) — local `D:/Codex/nekketsu-street-basket-fr`.
+  Créé et poussé le 17/08.
 - Structure : `README.md`/`README.en.md`, `docs/` (FR + `docs/en/`), `tools/`
   (20 scripts Lua/PowerShell/Python), `analysis/` (bank3_dis.txt, bank7_dis.txt),
-  `patch/` (2 IPS), `screenshots/` (captures FR ×2), `wiki/` (notes FR),
-  `.github/` (workflow + 3 scripts de check).
+  `patch/` (2 IPS), `screenshots/` (captures FR ×2), `.github/` (workflow +
+  3 scripts de check).
 - **Licence MIT** (`LICENSE`, avec notes ROM/crédits) + `CONTRIBUTING.md`
   (issues/PR). Crédits : base EN de Farid (v1.2 Final), jeu © 1993 Technos Japan.
 
@@ -88,10 +93,8 @@
 - Galerie README réalignée (FR+EN) : **Quiz | Équipe (SORT) | Match** ←
   quiz-dialogue.png / sort.png / match.png. `title.png` conservé dans
   `screenshots/` et référencé dans docs/02-state-machine.
-- **Wiki GitHub activé** (`has_wiki=true`), notes FR commitées dans `wiki/`
-  (Home, Desassemblage, Machine-a-etats, Input, Pipeline-texte, Notes-emulateurs).
-  ⚠️ Le dépôt git du wiki (`*.wiki.git`) n'est créé par GitHub qu'à la **1re
-  sauvegarde web** d'une page : ensuite `git clone` → copier `wiki/*.md` → push.
+- **Wiki GitHub : abandonné** (voir la section renommage ci-dessus) — le
+  dossier `wiki/` a été supprimé du repo.
 
 ### Reste à faire (inchangé)
 1. **Lancer un match** depuis le menu SORT → ouvrir **TACTIQUES** en match →

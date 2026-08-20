@@ -1,10 +1,20 @@
-# Nekketsu Street Basket — Reverse-Engineering & FR Translation
+# NES Translation — Reverse-Engineering & Translation Toolkit
 
-[![CI](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nekketsu-street-basket-fr/actions/workflows/ci.yml) · [Wiki](https://github.com/Endymi0n74/nekketsu-street-basket-fr/wiki)
+[![CI](https://github.com/Endymi0n74/nes-translation/actions/workflows/ci.yml/badge.svg)](https://github.com/Endymi0n74/nes-translation/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
+[![Langue](https://img.shields.io/badge/langue-Fran%C3%A7ais-blue)](README.md)
+[![EN](https://img.shields.io/badge/langue-English-lightgrey)](README.en.md)
 
-Documentation and tooling for the **French translation** of
+📚 [Docs](docs/) · 🛠️ [Tools](tools/) · 📦 [Patches](patch/) · ⚖️ [License](LICENSE) · 🤝 [Contributing](CONTRIBUTING.md)
+
+A **generic toolkit** for reverse-engineering and translating **NES** games:
+a 6502 disassembler, IPS patch generation, emulator harnesses (Mesen 2.1.1 /
+BizHawk), a keyboard-injection driver, and a porting guide to apply the method
+to any game.
+
+**Complete case study:** the **French translation** of
 *Nekketsu! Street Basket — Ganbare Dunk Heroes* (Famicom, 1993, Technos Japan),
-plus the **disassembly** work that made it possible.
+taken end-to-end with this kit — from disassembly to the published IPS patch.
 
 The published patch (`patch/`) turns the original Japanese ROM into a fully
 French version, using Farid's English translation (v1.2 Final, October 2010)
@@ -20,13 +30,14 @@ as a working base, then replacing all text with French.
 
 | Step | Status |
 |---|---|
-| Complete FR translation (patch v1.2 Final) | ✅ Published (16/08/2026) |
+| Generic toolkit (disassembly, IPS, hooks, keyboard driver) | ✅ Reusable |
+| Porting guide to another NES game | ✅ `docs/06-porting-guide.md` |
+| Complete FR translation of Nekketsu Street Basket (patch v1.2) | ✅ Published (16/08/2026) |
 | IPS patches JPN→FR and EN→FR | ✅ `patch/` |
 | Banks 3 & 7 disassembly | ✅ `analysis/` |
 | State machine (dispatcher, states/substates) | ✅ Mapped |
 | Input routines + keyboard injection | ✅ Solved (PowerShell driver) |
 | Verify the TACTICS screen in-match | 🔄 In progress |
-| Full font reverse-engineering | 🔄 To deepen |
 
 Current goal: navigate story mode → quiz → team → match, open the
 **TACTICS** menu in-match and verify the 5 tactics
@@ -54,7 +65,6 @@ The story → team → match flow, on the applied FR patch:
 ├── README.en.md                  ← English overview (this file)
 ├── CONTRIBUTING.md               ← contribution guide (issues/PR)
 ├── LICENSE                       ← MIT
-├── wiki/                         ← reverse-engineering notes (FR, wiki mirror)
 ├── docs/
 │   ├── 01-disassembly.md         ← ROM structure, banks, disassembly
 │   ├── 02-state-machine.md       ← state machine ($0588/$0589, dispatcher)
@@ -69,6 +79,8 @@ The story → team → match flow, on the applied FR patch:
 │   ├── make_ips.py               ← IPS patch generation
 │   ├── patch_rom.py              ← applies translations to the ROM
 │   ├── translations.py           ← French translation table (source of truth)
+│   ├── nes_state_hook.lua        ← generic Mesen harness (address hooks)
+│   ├── nes_driver.ps1            ← generic keyboard driver (data-driven sequences)
 │   ├── _mesen_dump.lua           ← Mesen capture harness (navigation + shots)
 │   ├── _mt_hook.lua              ← state-machine tracer (WRAM hooks)
 │   ├── _tact.lua                 ← state/substate hooks + screenshots

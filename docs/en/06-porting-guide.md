@@ -31,7 +31,7 @@ game.
 
 ## Step 1 — Set up the environment
 
-1. Clone the repo: `git clone https://github.com/Endymi0n74/nekketsu-street-basket-fr`.
+1. Clone the repo: `git clone https://github.com/Endymi0n74/nes-translation`.
 2. Copy `tools/` and `.github/` into your project.
 3. Prepare your base ROM (dump of the original game) and Mesen 2.1.1 (GUI mode).
 4. Run the generic harness to check it works (defaults = Nekketsu; change the
